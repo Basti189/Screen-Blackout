@@ -41,12 +41,12 @@ public class ScreenBlackout {
 	
 	private static void setupTray() throws AWTException {
 		if (!SystemTray.isSupported()) {
-	        return;
+			return;
 	    }
 		systemTray = SystemTray.getSystemTray();
-		Image image = Toolkit.getDefaultToolkit().getImage(ScreenBlackout.class.getResource("/de/wolfsline/Screen/icon.png"));
+		Image image = Toolkit.getDefaultToolkit().getImage(ScreenBlackout.class.getResource("/de/wolfsline/screen/icon.png"));
 		if (image == null) {
-			System.out.println("Image null");
+			return;
 		}
 		
 		PopupMenu trayPopupMenu = new PopupMenu();
