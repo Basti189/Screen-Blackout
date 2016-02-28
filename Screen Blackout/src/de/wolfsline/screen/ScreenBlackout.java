@@ -42,7 +42,7 @@ public class ScreenBlackout {
 	private static void setupTray() throws AWTException {
 		if (!SystemTray.isSupported()) {
 			return;
-	    }
+		}
 		systemTray = SystemTray.getSystemTray();
 		Image image = Toolkit.getDefaultToolkit().getImage(ScreenBlackout.class.getResource("/de/wolfsline/screen/icon.png"));
 		if (image == null) {
@@ -50,18 +50,18 @@ public class ScreenBlackout {
 		}
 		
 		PopupMenu trayPopupMenu = new PopupMenu();
-		for (Screen Screen : listScreens) {
+		for (Screen screen : listScreens) {
 			MenuItem menuScreen;
-			if (Screen.isDefaultScreen()) {
-				menuScreen = new MenuItem("Monitor " + Screen.getScreenNumber() + " (Hauptmonitor)");
+			if (screen.isDefaultScreen()) {
+				menuScreen = new MenuItem("Monitor " + screen.getScreenNumber() + " (Hauptmonitor)");
 				menuScreen.setEnabled(false);
 			} else {
-				menuScreen = new MenuItem("Monitor " + Screen.getScreenNumber());
+				menuScreen = new MenuItem("Monitor " + screen.getScreenNumber());
 			}
 			menuScreen.addActionListener(new ActionListener() {
 		        @Override
 		        public void actionPerformed(ActionEvent e) {
-		        	Screen.toggle();
+		        	screen.toggle();
 		        }
 		    });
 			trayPopupMenu.add(menuScreen);
