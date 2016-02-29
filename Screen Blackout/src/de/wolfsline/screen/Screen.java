@@ -108,7 +108,7 @@ public class Screen extends JWindow implements NativeKeyListener {
 	@Override
 	public void nativeKeyReleased(NativeKeyEvent arg0) {
 		String keyText = NativeKeyEvent.getKeyText(arg0.getKeyCode());
-		if (keyText.equals("Strg")) {
+		if (keyText.equals("Alt")) {
 			isPressedAlt = false;
 		}
 	}
